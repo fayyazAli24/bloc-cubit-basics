@@ -1,4 +1,5 @@
-import 'package:block/cubit/cubit.dart';
+import 'package:block/bloc/counterBlock.dart';
+import 'package:block/cubit/counterCubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,14 +12,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterCubit = BlocProvider.of<CounterCubit>(context);
+    final counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Scaffold(
 
       body: Center(
-        child: BlocBuilder<CounterCubit, int>(
-          bloc: counterCubit,
+        child: BlocBuilder<CounterBloc, int>(
           builder: (context, counter) {
-            return Text(counterCubit.state.toString(),style: TextStyle(fontSize: 24),);
+            return Text(counterBloc.state.toString(),style: TextStyle(fontSize: 24),);
           },
         ),
       ),
@@ -28,6 +29,7 @@ class HomeScreen extends StatelessWidget {
         },
         child: Icon(Icons.navigate_next),
       ),
+
     );
   }
 }

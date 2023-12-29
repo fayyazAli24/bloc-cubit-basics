@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/cubit.dart';
+import '../bloc/counterBlock.dart';
+import '../cubit/counterCubit.dart';
 
 class IncPage extends StatelessWidget {
   const IncPage({super.key});
@@ -9,11 +10,12 @@ class IncPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterCubit = BlocProvider.of<CounterCubit>(context);
+    final counterBloc = BlocProvider.of<CounterBloc>(context);
     return Scaffold(
       body: Column(),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          counterCubit.increment();
+          counterBloc.add(CounterIncremented());
         },
         child: Icon(Icons.exposure_plus_1_rounded),
       ),

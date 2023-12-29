@@ -6,10 +6,4 @@ class CounterCubit extends Cubit<int>{
   void increment(){
     emit(state +1);
   }
-}class IncrementCubit extends Cubit<int>{
-  IncrementCubit():super(0);
-
-  void increment(){
-    emit(state +1);
-  }
 }
