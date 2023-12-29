@@ -3,7 +3,7 @@ part 'counterEvent.dart';
 
 
 
-class CounterBloc extends Bloc<EventClass, int> {
+class CounterBloc extends Bloc<EventClass,int> {
   CounterBloc() : super(0) {
 
     on<CounterIncremented>((event, emit) {

@@ -1,9 +1,11 @@
-import 'package:block/cubit/counterCubit.dart';
+import 'package:block/cubit/practice/counterCubit.dart';
+import 'package:block/cubit/todoCubit.dart';
+import 'package:block/view/totoApp/todoScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/counterBlock.dart';
-import 'view/homeScreen.dart';
+import 'view/practiceBasics/homeScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +21,11 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_)=> CounterCubit()),
         BlocProvider(create: (_)=> CounterBloc()),
+        BlocProvider(create: (_)=> TodoCubit()),
       ] ,
       child: MaterialApp(
         title: 'Flutter Demo',
-        home: HomeScreen(),
+        home: TodoScreen(),
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/counterBlock.dart';
-import '../cubit/counterCubit.dart';
+import '../../bloc/counterBlock.dart';
+import '../../cubit/practice/counterCubit.dart';
 
 class IncPage extends StatelessWidget {
   const IncPage({super.key});

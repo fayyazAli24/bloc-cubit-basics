@@ -1,9 +1,9 @@
 import 'package:block/bloc/counterBlock.dart';
-import 'package:block/cubit/counterCubit.dart';
+import 'package:block/cubit/practice/counterCubit.dart';
+import 'package:block/view/totoApp/addTodoScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'incPage.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,15 +19,15 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: BlocBuilder<CounterBloc, int>(
           builder: (context, counter) {
-            return Text(counterBloc.state.toString(),style: TextStyle(fontSize: 24),);
+            return Text(counterBloc.state.toString(),style: const TextStyle(fontSize: 24),);
           },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>IncPage()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const IncPage()));
         },
-        child: Icon(Icons.navigate_next),
+        child: const Icon(Icons.navigate_next),
       ),
 
     );
